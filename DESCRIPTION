@@ -1,6 +1,6 @@
 Package: aws
 Version: 2.5-3
-Date: 2022-07-08
+Date: 2023-06-21
 Title: Adaptive Weights Smoothing
 Authors@R: c(person("Joerg","Polzehl",role=c("aut","cre"),email="joerg.polzehl@wias-berlin.de"),person("Felix","Anker",role=c("ctb")))
 Author: Joerg Polzehl [aut, cre], Felix Anker [ctb]
@@ -20,7 +20,7 @@ Description: We provide a collection of R-functions implementing
    Magnetic Resonance Brain Imaging, Appendix A, Springer, Use R! Series.
    <doi:10.1007/978-3-030-29184-6_6>.
 License: GPL (>=2)
-Copyright: This package is Copyright (C) 2005-2021 Weierstrass Institute
+Copyright: This package is Copyright (C) 2005-2023 Weierstrass Institute
     for Applied Analysis and Stochastics.
-URL: http://www.wias-berlin.de/people/polzehl/
+URL: https://www.wias-berlin.de/people/polzehl/
 RoxygenNote: 5.0.1

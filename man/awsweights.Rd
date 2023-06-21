@@ -47,7 +47,7 @@ Joerg Polzehl, Kostas Papafitsoros, Karsten Tabelow (2020). Patch-Wise Adaptive 
 %% ~put references to the literature/web site here ~
 }
 \author{ Joerg Polzehl, \email{polzehl@wias-berlin.de}, 
-\url{http://www.wias-berlin.de/people/polzehl/}
+\url{https://www.wias-berlin.de/people/polzehl/}
 %%  ~~who you are~~
 }
 

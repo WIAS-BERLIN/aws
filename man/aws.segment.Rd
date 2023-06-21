@@ -94,7 +94,7 @@ returns anobject of class \code{aws} with slots
   335 - 362. DOI:10.1007/s00440-005-0464-1
 }
 \author{ Joerg Polzehl, \email{polzehl@wias-berlin.de},
-\url{http://www.wias-berlin.de/people/polzehl/}  }
+\url{https://www.wias-berlin.de/people/polzehl/}  }
 \seealso{\code{\link{aws}}, \code{\link{aws.gaussian}} }
 \examples{
 require(aws)

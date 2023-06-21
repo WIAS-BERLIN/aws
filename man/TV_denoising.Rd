@@ -68,7 +68,7 @@ TGV_denoising_colour(datanoisy, alpha, beta, iter = 1000, tolmean = 1e-06,
 }
 \author{
 Joerg Polzehl, \email{polzehl@wias-berlin.de},
-\url{http://www.wias-berlin.de/people/polzehl/}
+\url{https://www.wias-berlin.de/people/polzehl/}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

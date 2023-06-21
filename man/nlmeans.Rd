@@ -60,7 +60,7 @@ Simulation, 4, 490-530. DOI:10.1137/040616024.
 \url{http://www.numerical-tours.com/matlab/denoisingadv_6_nl_means/#biblio}
 }
 \author{ Joerg Polzehl, \email{polzehl@wias-berlin.de},
-\url{http://www.wias-berlin.de/people/polzehl/}
+\url{https://www.wias-berlin.de/people/polzehl/}
 }
 \note{
 use \code{setCores='number of threads'} to enable parallel execution.

@@ -43,7 +43,7 @@ qmeasures(img, ref,
 }
 \author{
 Joerg Polzehl, \email{polzehl@wias-berlin.de},
-\url{http://www.wias-berlin.de/people/polzehl/}
+\url{https://www.wias-berlin.de/people/polzehl/}
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

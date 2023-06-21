@@ -111,7 +111,7 @@ Joerg Polzehl, Vladimir Spokoiny,  Propagation-separation approach for local lik
 Joerg Polzehl, Vladimir Spokoiny, in V. Chen, C.; Haerdle, W. and Unwin, A. (ed.) Handbook of Data Visualization Structural adaptive smoothing by propagation-separation methods Springer-Verlag, 2008, 471-492
 }
 \author{ Joerg Polzehl, \email{polzehl@wias-berlin.de},
-\url{http://www.wias-berlin.de/people/polzehl/} }
+\url{https://www.wias-berlin.de/people/polzehl/} }
 \seealso{See also  \code{\link{aws}}, \code{link{awsdata}}, \code{\link{aws.irreg}} }
 \examples{
 require(aws)

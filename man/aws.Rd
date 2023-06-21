@@ -128,7 +128,7 @@ returns anobject of class \code{aws} with slots
 						 Probab. Theory Related Fields  135 (3),  (2006)  , pp. 335--362. DOI:10.1007/s00440-005-0464-1.
 }
 \author{ Joerg Polzehl, \email{polzehl@wias-berlin.de},
-\url{http://www.wias-berlin.de/people/polzehl/}}
+\url{https://www.wias-berlin.de/people/polzehl/}}
 \note{
 use \code{setCores='number of threads'} to enable parallel execution.
 }

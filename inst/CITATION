@@ -30,6 +30,6 @@ bibentry(bibtype = "Book",
                           family = "Tabelow",
                           email = "karsten.tabelow@wias-berlin.de")),
   series =    "UseR!",
-  doi =       "10.1007/978-3-30-29184-6"
+  doi =       "10.1007/978-3-030-29184-6"
 )
 
