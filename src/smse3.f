@@ -462,6 +462,7 @@ C
 c   model=0  Chi^2-based KL-distance, y ~ Chi, th on same scale, smooth y
 c   model=1  Chi^2-based KL-distance, y ~ Chi^2, th on same scale, smooth y
 c   model=2  Gauss-based KL-distance, y ~ Chi, th on same scale, smooth y^2
+      use omp_lib
       implicit none
       integer n1,n2,n3,ngrad,n,ind(5,n),ncoils,model,ncores
       integer pos(*),nv
@@ -472,8 +473,8 @@ c   model=2  Gauss-based KL-distance, y ~ Chi, th on same scale, smooth y^2
       integer iind,i,i1,i2,i3,i4,j1,j2,j3,j4,thrednr,
      1       jind,iindp,jindp,n12
       double precision z,thi,nii,thj,ldfi,ldfj,yj
-!$      integer omp_get_thread_num
-!$      external omp_get_thread_num
+C!$      integer omp_get_thread_num
+C!$      external omp_get_thread_num
       double precision kldisnc1
       external kldisnc1
       df=2.d0*ncoils
@@ -638,6 +639,7 @@ C   location weights in w(i)
 C   ind(.,i)[1:5] are j1-i1,j2-i2,j3-i3, i4 and j4 respectively
 C
 c   model=2  Gauss-based KL-distance, y ~ Chi, th on same scale, smooth y^2
+      use omp_lib
       implicit none
       integer ns,n1,n2,n3,ngrad,n,ind(5,n),ncores
       integer pos(*),nv
@@ -647,8 +649,8 @@ c   model=2  Gauss-based KL-distance, y ~ Chi, th on same scale, smooth y^2
       integer iind,jind,i,i1,i2,i3,i4,j1,j2,j3,j4,thrednr,k,n12,
      1        iindp,jindp
       double precision sz,z,nii,si(ns,ncores),thi(ns,ncores)
-!$      integer omp_get_thread_num
-!$      external omp_get_thread_num
+C!$      integer omp_get_thread_num
+C!$      external omp_get_thread_num
       double precision kldisnc1
       external kldisnc1
       nii=1.d0
@@ -805,6 +807,7 @@ C   ind(.,i) contains coordinate information corresponding to positive
 C   location weights in w(i) for si images
 C   ind(.,i)[1:5] are j1-i1,j2-i2,j3-i3, i4 and j4 respectively
 C
+      use omp_lib
       implicit none
       integer nv,ns,n1,n2,n3,ngrad,n,n0,ind(5,n),ind0(3,n0),pos(*)
       double precision y(*),y0(nv),th(ns,*),ni(ns,*),th0(ns,nv),
@@ -819,8 +822,8 @@ C              ngrad*ncores in sw and swy
       integer iind,i,i1,i2,i3,i4,j1,j2,j3,j4,thrednr,k,jind,iind4,
      1        jind4,n12,iindp,jindp
       double precision sz,z,sw0,swy0
-!$      integer omp_get_thread_num
-!$      external omp_get_thread_num
+C!$      integer omp_get_thread_num
+C!$      external omp_get_thread_num
       thrednr = 1
       n12 = n1*n2
 C$OMP PARALLEL DEFAULT(NONE)

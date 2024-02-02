@@ -784,6 +784,7 @@ C   bi       \sum  Wi   (output)
 C   thnew    \sum  Wi Y / bi     (output)
 C   wght     scaling factor for second and third dimension (larger values shrink)
 C
+      use omp_lib
       implicit none
 
       integer nv,n1,n2,n3,ncores,pos(*)
@@ -797,8 +798,8 @@ C
      1        w1,w2,spmb,swj2
       external lkern
       double precision lkern
-!$      integer omp_get_thread_num
-!$      external omp_get_thread_num
+C!$      integer omp_get_thread_num
+C!$      external omp_get_thread_num
       thrednr = 1
 C just to prevent a compiler warning
       hakt2=hakt*hakt
@@ -946,6 +947,7 @@ C   bi       \sum  Wi   (output)
 C   thnew    \sum  Wi Y / bi     (output)
 C   wght     scaling factor for second and third dimension (larger values shrink)
 C
+      use omp_lib
       implicit none
 
       integer nv,n1,n2,n3,ncores,nvd,pos(*)
@@ -960,8 +962,8 @@ C
       double precision thi(nv,*),invcovi(nvd,*)
       external lkern, KLdistsi
       double precision lkern, KLdistsi
-!$      integer omp_get_thread_num
-!$      external omp_get_thread_num
+C!$      integer omp_get_thread_num
+C!$      external omp_get_thread_num
       thrednr = 1
 C just to prevent a compiler warning
       hakt2=hakt*hakt

@@ -19,6 +19,7 @@ C   ncores   number of cores
 C
 C   wght     scaling factor for second and third dimension (larger values shrink)
 C
+      use omp_lib
       implicit none
 
       integer nv,n1,n2,n3,ncores
@@ -33,8 +34,8 @@ C
      1       w1,w2,spmb,spf
       external lkern,KLdist2
       double precision lkern,KLdist2
-!$      integer omp_get_thread_num
-!$      external omp_get_thread_num
+C!$      integer omp_get_thread_num
+C!$      external omp_get_thread_num
       thrednr = 1
 C just to prevent a compiler warning
       hakt2=hakt*hakt

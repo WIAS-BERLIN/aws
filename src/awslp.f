@@ -25,6 +25,7 @@ C   sw       array of "smoothed" weights dim(dls,dls) dls=2*(ih+ihw)+1
 C
 C   temporary arrays set for maximum degree 2
 C
+      use omp_lib
       implicit none
       external kldistp,lkern
       double precision kldistp,lkern
@@ -38,8 +39,8 @@ C
      1       hakt2,thij(3),thi(3),zz(5),lwj,yj,hs2,hs,z,cc,spf,
      2       hhommax,hhommin,az1,hfixmax,hnfix,ssij,spmax,
      3       hhomimin,hhomimax
-!$    integer omp_get_thread_num
-!$    external omp_get_thread_num
+C!$    integer omp_get_thread_num
+C!$    external omp_get_thread_num
 C   arrays with variable length are organized as
 C   theta(n,dp1)
 C   bi(n,dp2)

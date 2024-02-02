@@ -305,7 +305,7 @@ ICIsmooth <- function(y,
       ind <- ind0[Low[ind0] <= Up[ind0]]
       hbest[ind] <- hakt
       yhat[ind] <- z@yhat[ind]
-      vhat[ind] <- sigma ^ 2 / z@vred
+      vhat[ind] <- sigma ^ 2 * z@vred
       fixed[-ind] <- TRUE
       hakt <- hakt * hinc
       if (sum(fixed) == n)
