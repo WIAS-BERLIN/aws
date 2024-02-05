@@ -278,6 +278,7 @@ C   sw       array of "smoothed" weights dim(dls,dls) dls=2*(ih+ihw)+1
 C
 C   temporary arrays set for maximum degree 2
 C
+      use omp_lib
       implicit none
       external kldistp,lkern
       double precision kldistp,lkern
@@ -291,8 +292,8 @@ C
      1       hakt2,thij(3),thi(3),zz(5),lwj,yj,hs2,hs,z,cc,spf,hhomi,
      2       hhommax,az1,hfixmax,hnfix
 
-!$    integer omp_get_thread_num
-!$    external omp_get_thread_num
+C!$    integer omp_get_thread_num
+C!$    external omp_get_thread_num
 
 C   arrays with variable length are organized as
 C   theta(n,dp1)
@@ -491,6 +492,7 @@ C   sw       array of "smoothed" weights dim(dls,dls) dls=2*(ih+ihw)+1
 C
 C   temporary arrays set for maximum degree 2
 C
+      use omp_lib
       implicit none
       external kldistp,lkern
       double precision kldistp,lkern
@@ -504,8 +506,8 @@ C
       double precision bii(15),sij,swj(15),swj2(15),swj0(15),swjy(6),
      1       z1,z2,wj,hakt2,thij(6),thi(6),zz(15),lwj,hs2,hs,z,cc,
      2       wjy,spf,hhomi,hhommax,az1,hfixmax,hnfix
-!$      integer omp_get_thread_num
-!$      external omp_get_thread_num
+C!$      integer omp_get_thread_num
+C!$      external omp_get_thread_num
 C   arrays with variable length are organized as
 C   theta(n1,n2,dp1)
 C   bi(n1,n2,dp2)
@@ -767,6 +769,7 @@ C   sw       array of "smoothed" weights dim(dls,dls) dls=2*(ih+ihw)+1
 C
 C   temporary arrays set for maximum degree 2
 C
+      use omp_lib
       implicit none
       external kldistp,lkern
       double precision kldistp,lkern
@@ -780,8 +783,8 @@ C
       double precision bii(15),sij,swj(15),swj2(15),swj0(15),swjy(6),
      1       z1,z2,wj,hakt2,thij(6),thi(6),zz(15),lwj,hs2,hs,z,cc,
      2       wjy,spf,hhomi,hhommax,az1,hfixmax,hnfix
-!$    integer omp_get_thread_num
-!$    external omp_get_thread_num
+C!$    integer omp_get_thread_num
+C!$    external omp_get_thread_num
 C   arrays with variable length are organized as
 C   theta(n1,n2,dp1)
 C   bi(n1,n2,dp2)
