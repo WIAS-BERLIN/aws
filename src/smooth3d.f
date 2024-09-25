@@ -347,7 +347,7 @@ C   lwght    array for non-adaptive weights (auxiliary)
 C   wght     rations of voxel dimensions
 C   resi     auxilary array
 C
-      use omp_lib
+C!$      use omp_lib
       implicit none
       integer n1,n2,n3,n4,kern,skern,wlse,pos(*)
       logical aws
@@ -356,8 +356,6 @@ C
       integer ih1,ih2,ih3,i1,i2,i3,j1,j2,j3,jw1,jw2,jw3,clw1,clw2,clw3,
      1  dlw1,dlw2,dlw3,k,n,thrednr,iind,jind,rthrednr,dlw12,jindp,iindp
       double precision bii,swj,swjy,thi,wj,hakt2,spf,si2i,sresisq,resik
-C!$      integer omp_get_thread_num
-C!$      external omp_get_thread_num
       hakt2=hakt*hakt
       spf=spmax/(spmax-spmin)
       aws=lambda.lt.1d40
@@ -391,7 +389,7 @@ C$OMP& PRIVATE(iind,jind,i1,i2,i3,j1,j2,j3,jw1,jw2,jw3,k,si2i,
 C$OMP& bii,swj,wj,sresisq,thrednr,rthrednr,resik,thi,swjy,iindp,jindp)
 C$OMP DO SCHEDULE(GUIDED)
       DO iind=1,n
-!$         thrednr = omp_get_thread_num()+1
+C!$         thrednr = omp_get_thread_num()+1
          iindp=pos(iind)
          if(iindp.eq.0) CYCLE
          rthrednr = (thrednr-1)*n4
@@ -484,7 +482,7 @@ C   lwght    array for non-adaptive weights (auxiliary)
 C   wght     rations of voxel dimensions
 C   swjy     auxilary array
 C
-      use omp_lib
+C!$      use omp_lib
       implicit none
       integer dv,n1,n2,n3,kern,skern,ncores,wlse,pos(*)
       logical aws
@@ -495,8 +493,6 @@ C
      1        clw1,clw2,clw3,dlw1,dlw2,dlw3,k,n,thrednr,iind,jind,
      2        iindp,jindp
       double precision bii,swj,wj,hakt2,spf,si2i,thi
-C!$      integer omp_get_thread_num
-C!$      external omp_get_thread_num
       hakt2=hakt*hakt
       spf=spmax/(spmax-spmin)
       aws=lambda.lt.1d40
@@ -528,7 +524,7 @@ C$OMP& PRIVATE(iind,jind,i1,i2,i3,k,si2i,bii,swj,j1,j2,j3,thi,
 C$OMP& jw1,jw2,jw3,wj,thrednr,iindp,jindp)
 C$OMP DO SCHEDULE(GUIDED)
       DO iind=1,n
-!$         thrednr = omp_get_thread_num()+1
+C!$         thrednr = omp_get_thread_num()+1
          iindp=pos(iind)
          if(iindp.eq.0) CYCLE
          i1=mod(iind,n1)

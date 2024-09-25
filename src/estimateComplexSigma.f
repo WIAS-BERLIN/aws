@@ -19,7 +19,7 @@ C   ncores   number of cores
 C
 C   wght     scaling factor for second and third dimension (larger values shrink)
 C
-      use omp_lib
+C!$      use omp_lib
       implicit none
 
       integer nv,n1,n2,n3,ncores
@@ -34,8 +34,6 @@ C
      1       w1,w2,spmb,spf
       external lkern,KLdist2
       double precision lkern,KLdist2
-C!$      integer omp_get_thread_num
-C!$      external omp_get_thread_num
       thrednr = 1
 C just to prevent a compiler warning
       hakt2=hakt*hakt
@@ -100,7 +98,7 @@ C$OMP& j1,jw1,jind,z1,thrednr,swj2)
 C$OMP DO SCHEDULE(GUIDED)
       DO iind=1,n1*n2*n3
          if(mask(iind).eq.0) CYCLE
-!$         thrednr = omp_get_thread_num()+1
+C!$         thrednr = omp_get_thread_num()+1
 C returns value in 0:(ncores-1)
          i1=mod(iind,n1)
          if(i1.eq.0) i1=n1

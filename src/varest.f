@@ -67,7 +67,7 @@ C   3D median smoother of y with neighborhood defined by ind
 C   results in yout
 C   size of work needs to be 2*nind
 C
-      use omp_lib
+C!$      use omp_lib
       implicit none
       integer n1,n2,n3,nind,ind(3,nind),ncores
       integer mask(n1,n2,n3)
@@ -75,14 +75,12 @@ C
       integer i1,i2,i3,j1,j2,j3,j,k,thrednr
       double precision fmedian
       external fmedian
-C!$      integer omp_get_thread_num
-C!$      external omp_get_thread_num
       thrednr = 1
 C$OMP PARALLEL DEFAULT(SHARED)
 C$OMP& PRIVATE(i1,i2,i3,j1,j2,j3,j,k,thrednr)
 C$OMP DO SCHEDULE(GUIDED)
       DO i1=1,n1
-!$         thrednr = omp_get_thread_num()+1
+C!$         thrednr = omp_get_thread_num()+1
          DO i2=1,n2
             DO i3=1,n3
                if(mask(i1,i2,i3).eq.0) THEN
@@ -139,7 +137,7 @@ C   location weights in w(i)
 C   ind(.,i)[1:3] are j1-i1,j2-i2 and j3-i3 respectively
 C   wad, sad - array for weights>0 and corresponding observed s
 C
-      use omp_lib
+C!$      use omp_lib
       implicit none
       integer n1,n2,n3,nw,ind(3,nw),nthreds,iL,nfb
       integer mask(n1,n2,n3)
@@ -150,8 +148,6 @@ C
       integer i1,i2,i3,j1,j2,j3,i,j,jj,n,maxit,thrednr
       double precision z,sw,sws,sws2,sj,thi,wj,kval,fnsi,sgi,tol,low,up,
      1       fmin,sgi2,vz,thi2,thj2,fnsj,thj,nii
-C!$      integer omp_get_thread_num
-C!$      external omp_get_thread_num
       n = n1*n2*n3
       thrednr = 1
       tol=1d-5
@@ -169,7 +165,7 @@ C$OMP DO SCHEDULE(GUIDED)
          if(i2.eq.0) i2=n2
          i3=(i-i1-(i2-1)*n1)/n1/n2+1
          if(mask(i1,i2,i3).eq.0) CYCLE
-!$         thrednr = omp_get_thread_num()+1
+C!$         thrednr = omp_get_thread_num()+1
          sw=0.d0
          sws=0.d0
          sws2=0.d0
@@ -273,7 +269,7 @@ C   location weights in w(i)
 C   ind(.,i)[1:3] are j1-i1,j2-i2 and j3-i3 respectively
 C   wad, sad - array for weights>0 and corresponding observed s
 C
-      use omp_lib
+C!$      use omp_lib
       implicit none
       integer n1,n2,n3,nw,ind(3,nw)
       integer mask(n1,n2,n3)
@@ -281,8 +277,6 @@ C
      1 th(n1,n2,n3),sigman(n1*n2*n3),lambda,w(nw),sigma(n1,n2,n3),minni
       integer i1,i2,i3,j1,j2,j3,i,j,n,thrednr
       double precision z,sw,sws,sws2,sj,thi,wj,kval,sgi
-C!$      integer omp_get_thread_num
-C!$      external omp_get_thread_num
       n = n1*n2*n3
       thrednr = 1
 C  precompute values of lgamma(corrected df/2) in each voxel
@@ -297,7 +291,7 @@ C$OMP DO SCHEDULE(GUIDED)
          if(i2.eq.0) i2=n2
          i3=(i-i1-(i2-1)*n1)/n1/n2+1
          if(mask(i1,i2,i3).eq.0) CYCLE
-!$         thrednr = omp_get_thread_num()+1
+C!$         thrednr = omp_get_thread_num()+1
          sw=0.d0
          sws=0.d0
          sws2=0.d0
@@ -442,7 +436,7 @@ C   ind(.,i) contains coordinate indormation corresponding to positive
 C   location weights in w(i)
 C   ind(.,i)[1:5] are j1-i1,j2-i2,j3-i3, i4 and j4 respectively
 C
-      use omp_lib
+C!$      use omp_lib
       implicit none
       integer n1,n2,n3,nw,ind(3,nw),nthreds
       integer mask(n1,n2,n3)
@@ -451,8 +445,6 @@ C
      2       sigma,wad(nw,nthreds)
       integer i1,i2,i3,j1,j2,j3,i,j,n,thrednr
       double precision z,sw,sw2,swy,swy2,yj,thi,wj,kval,cw,fnsi
-C!$      integer omp_get_thread_num
-C!$      external omp_get_thread_num
       n = n1*n2*n3
       thrednr = 1
 C  precompute values of lgamma(corrected df/2) in each voxel
@@ -467,7 +459,7 @@ C$OMP DO SCHEDULE(GUIDED)
          if(i2.eq.0) i2=n2
          i3=(i-i1-(i2-1)*n1)/n1/n2+1
          if(mask(i1,i2,i3).eq.0) CYCLE
-!$         thrednr = omp_get_thread_num()+1
+C!$         thrednr = omp_get_thread_num()+1
          sw=0.d0
          swy=0.d0
          sw2=0.d0
