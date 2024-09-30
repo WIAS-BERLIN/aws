@@ -25,7 +25,7 @@ C   sw       array of "smoothed" weights dim(dls,dls) dls=2*(ih+ihw)+1
 C
 C   temporary arrays set for maximum degree 2
 C
-C!$      use omp_lib
+!$      use omp_lib
       implicit none
       external kldistp,lkern
       double precision kldistp,lkern
@@ -90,7 +90,7 @@ C$OMP&         ssij,hhomimin,hhomimax,thrednr,trl,trs)
 C$OMP DO SCHEDULE(GUIDED)
       DO iind=1,n
 
-C!$       thrednr = omp_get_thread_num()
+!$       thrednr = omp_get_thread_num()
          trl = thrednr*dlw
          trs = thrednr*dsw
          zz(1)=1.d0
@@ -276,7 +276,7 @@ C   sw       array of "smoothed" weights dim(dls,dls) dls=2*(ih+ihw)+1
 C
 C   temporary arrays set for maximum degree 2
 C
-C!$      use omp_lib
+!$      use omp_lib
       implicit none
       external kldistp,lkern
       double precision kldistp,lkern
@@ -341,7 +341,7 @@ C$OMP DO SCHEDULE(GUIDED)
       DO iind=1,n
          IF (fix(iind).ne.0) CYCLE
 C    nothing to do, final estimate is already fixed by control
-C!$       thrednr = omp_get_thread_num()
+!$       thrednr = omp_get_thread_num()
          trl = thrednr*dlw
          trs = thrednr*dsw
          zz(1)=1.d0
@@ -488,7 +488,7 @@ C   sw       array of "smoothed" weights dim(dls,dls) dls=2*(ih+ihw)+1
 C
 C   temporary arrays set for maximum degree 2
 C
-C!$      use omp_lib
+!$      use omp_lib
       implicit none
       external kldistp,lkern
       double precision kldistp,lkern
@@ -567,7 +567,7 @@ C$OMP DO SCHEDULE(GUIDED)
             IF (fix(iind).ne.0) CYCLE
 C    nothing to do, final estimate is already fixed by control
             zz(1)=1.d0
-C!$          thrednr = omp_get_thread_num()
+!$          thrednr = omp_get_thread_num()
             trl = thrednr*dlw2
             trs = thrednr*dsw*dsw
             hhomi=hhom(iind)
@@ -763,7 +763,7 @@ C   sw       array of "smoothed" weights dim(dls,dls) dls=2*(ih+ihw)+1
 C
 C   temporary arrays set for maximum degree 2
 C
-C!$      use omp_lib
+!$      use omp_lib
       implicit none
       external kldistp,lkern
       double precision kldistp,lkern
@@ -842,7 +842,7 @@ C$OMP DO SCHEDULE(GUIDED)
             IF (fix(iind).ne.0) CYCLE
 C    nothing to do, final estimate is already fixed by control
             zz(1)=1.d0
-C!$            thrednr = omp_get_thread_num()
+!$            thrednr = omp_get_thread_num()
             trl = thrednr*dlw2
             trs = thrednr*dsw*dsw
             hhomi=hhom(iind)

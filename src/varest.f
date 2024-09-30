@@ -67,7 +67,7 @@ C   3D median smoother of y with neighborhood defined by ind
 C   results in yout
 C   size of work needs to be 2*nind
 C
-C!$      use omp_lib
+!$      use omp_lib
       implicit none
       integer n1,n2,n3,nind,ind(3,nind),ncores
       integer mask(n1,n2,n3)
@@ -80,7 +80,7 @@ C$OMP PARALLEL DEFAULT(SHARED)
 C$OMP& PRIVATE(i1,i2,i3,j1,j2,j3,j,k,thrednr)
 C$OMP DO SCHEDULE(GUIDED)
       DO i1=1,n1
-C!$         thrednr = omp_get_thread_num()+1
+!$         thrednr = omp_get_thread_num()+1
          DO i2=1,n2
             DO i3=1,n3
                if(mask(i1,i2,i3).eq.0) THEN
@@ -137,7 +137,7 @@ C   location weights in w(i)
 C   ind(.,i)[1:3] are j1-i1,j2-i2 and j3-i3 respectively
 C   wad, sad - array for weights>0 and corresponding observed s
 C
-C!$      use omp_lib
+!$      use omp_lib
       implicit none
       integer n1,n2,n3,nw,ind(3,nw),nthreds,iL,nfb
       integer mask(n1,n2,n3)
@@ -165,7 +165,7 @@ C$OMP DO SCHEDULE(GUIDED)
          if(i2.eq.0) i2=n2
          i3=(i-i1-(i2-1)*n1)/n1/n2+1
          if(mask(i1,i2,i3).eq.0) CYCLE
-C!$         thrednr = omp_get_thread_num()+1
+!$         thrednr = omp_get_thread_num()+1
          sw=0.d0
          sws=0.d0
          sws2=0.d0
@@ -269,7 +269,7 @@ C   location weights in w(i)
 C   ind(.,i)[1:3] are j1-i1,j2-i2 and j3-i3 respectively
 C   wad, sad - array for weights>0 and corresponding observed s
 C
-C!$      use omp_lib
+!$      use omp_lib
       implicit none
       integer n1,n2,n3,nw,ind(3,nw)
       integer mask(n1,n2,n3)
@@ -291,7 +291,7 @@ C$OMP DO SCHEDULE(GUIDED)
          if(i2.eq.0) i2=n2
          i3=(i-i1-(i2-1)*n1)/n1/n2+1
          if(mask(i1,i2,i3).eq.0) CYCLE
-C!$         thrednr = omp_get_thread_num()+1
+!$         thrednr = omp_get_thread_num()+1
          sw=0.d0
          sws=0.d0
          sws2=0.d0
@@ -436,7 +436,7 @@ C   ind(.,i) contains coordinate indormation corresponding to positive
 C   location weights in w(i)
 C   ind(.,i)[1:5] are j1-i1,j2-i2,j3-i3, i4 and j4 respectively
 C
-C!$      use omp_lib
+!$      use omp_lib
       implicit none
       integer n1,n2,n3,nw,ind(3,nw),nthreds
       integer mask(n1,n2,n3)
@@ -459,7 +459,7 @@ C$OMP DO SCHEDULE(GUIDED)
          if(i2.eq.0) i2=n2
          i3=(i-i1-(i2-1)*n1)/n1/n2+1
          if(mask(i1,i2,i3).eq.0) CYCLE
-C!$         thrednr = omp_get_thread_num()+1
+!$         thrednr = omp_get_thread_num()+1
          sw=0.d0
          swy=0.d0
          sw2=0.d0

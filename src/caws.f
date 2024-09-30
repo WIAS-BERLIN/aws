@@ -784,7 +784,7 @@ C   bi       \sum  Wi   (output)
 C   thnew    \sum  Wi Y / bi     (output)
 C   wght     scaling factor for second and third dimension (larger values shrink)
 C
-C!$      use omp_lib
+!$      use omp_lib
       implicit none
 
       integer nv,n1,n2,n3,ncores,pos(*)
@@ -863,7 +863,7 @@ C$OMP DO SCHEDULE(GUIDED)
       DO iind=1,n1*n2*n3
          iindp=pos(iind)
          if(iindp.eq.0) CYCLE
-C!$         thrednr = omp_get_thread_num()+1
+!$         thrednr = omp_get_thread_num()+1
 C returns value in 0:(ncores-1)
          i1=mod(iind,n1)
          if(i1.eq.0) i1=n1
@@ -945,7 +945,7 @@ C   bi       \sum  Wi   (output)
 C   thnew    \sum  Wi Y / bi     (output)
 C   wght     scaling factor for second and third dimension (larger values shrink)
 C
-C!$      use omp_lib
+!$      use omp_lib
       implicit none
 
       integer nv,n1,n2,n3,ncores,nvd,pos(*)
@@ -1026,7 +1026,7 @@ C$OMP DO SCHEDULE(GUIDED)
       DO iind=1,n1*n2*n3
          iindp=pos(iind)
          if(iindp.eq.0) CYCLE
-C!$         thrednr = omp_get_thread_num()+1
+!$         thrednr = omp_get_thread_num()+1
 C returns value in 0:(ncores-1)
          i1=mod(iind,n1)
          if(i1.eq.0) i1=n1

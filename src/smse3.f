@@ -462,7 +462,7 @@ C
 c   model=0  Chi^2-based KL-distance, y ~ Chi, th on same scale, smooth y
 c   model=1  Chi^2-based KL-distance, y ~ Chi^2, th on same scale, smooth y
 c   model=2  Gauss-based KL-distance, y ~ Chi, th on same scale, smooth y^2
-C!$      use omp_lib
+!$      use omp_lib
       implicit none
       integer n1,n2,n3,ngrad,n,ind(5,n),ncoils,model,ncores
       integer pos(*),nv
@@ -509,7 +509,7 @@ C$OMP END DO
 C$OMP BARRIER
 C$OMP DO SCHEDULE(GUIDED)
       DO iind=1,n1*n2*n3
-C!$         thrednr = omp_get_thread_num()+1
+!$         thrednr = omp_get_thread_num()+1
 C returns value in 0:(ncores-1)
          iindp = pos(iind)
          if(iindp.eq.0) CYCLE
@@ -637,7 +637,7 @@ C   location weights in w(i)
 C   ind(.,i)[1:5] are j1-i1,j2-i2,j3-i3, i4 and j4 respectively
 C
 c   model=2  Gauss-based KL-distance, y ~ Chi, th on same scale, smooth y^2
-C!$      use omp_lib
+!$      use omp_lib
       implicit none
       integer ns,n1,n2,n3,ngrad,n,ind(5,n),ncores
       integer pos(*),nv
@@ -663,7 +663,7 @@ C$OMP DO SCHEDULE(GUIDED)
       DO iind=1,n1*n2*n3
          iindp = pos(iind)
          if(iindp.eq.0) CYCLE
-C!$       thrednr = omp_get_thread_num()+1
+!$       thrednr = omp_get_thread_num()+1
 C returns value in 0:(ncores-1)
          i1=mod(iind,n1)
          if(i1.eq.0) i1=n1
@@ -803,7 +803,7 @@ C   ind(.,i) contains coordinate information corresponding to positive
 C   location weights in w(i) for si images
 C   ind(.,i)[1:5] are j1-i1,j2-i2,j3-i3, i4 and j4 respectively
 C
-C!$      use omp_lib
+!$      use omp_lib
       implicit none
       integer nv,ns,n1,n2,n3,ngrad,n,n0,ind(5,n),ind0(3,n0),pos(*)
       double precision y(*),y0(nv),th(ns,*),ni(ns,*),th0(ns,nv),
@@ -831,7 +831,7 @@ C  First si - images
       DO iind=1,n1*n2*n3
          iindp = pos(iind)
          if(iindp.eq.0) CYCLE
-C!$         thrednr = omp_get_thread_num()+1
+!$         thrednr = omp_get_thread_num()+1
 C returns value in 0:(ncores-1)
          i1=mod(iind,n1)
          if(i1.eq.0) i1=n1

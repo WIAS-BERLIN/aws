@@ -19,7 +19,7 @@ C   ncores   number of cores
 C
 C   wght     scaling factor for second and third dimension (larger values shrink)
 C
-C!$      use omp_lib
+!$      use omp_lib
       implicit none
 
       integer nv,n1,n2,n3,ncores
@@ -98,7 +98,7 @@ C$OMP& j1,jw1,jind,z1,thrednr,swj2)
 C$OMP DO SCHEDULE(GUIDED)
       DO iind=1,n1*n2*n3
          if(mask(iind).eq.0) CYCLE
-C!$         thrednr = omp_get_thread_num()+1
+!$         thrednr = omp_get_thread_num()+1
 C returns value in 0:(ncores-1)
          i1=mod(iind,n1)
          if(i1.eq.0) i1=n1
